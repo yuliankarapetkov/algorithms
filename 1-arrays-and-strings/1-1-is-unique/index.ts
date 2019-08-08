@@ -21,7 +21,7 @@ function isUnique(str: string): boolean {
     return true;
 }
 
-// Solution #2:
+// Solution #2 (book):
 // Storage issue does not apply in the case of using ASCII chars only.
 function isUniqueAscii(str: string): boolean {
     const asciiCharsLength = 128;
@@ -45,7 +45,7 @@ function isUniqueAscii(str: string): boolean {
     return true;
 }
 
-// Solution #3:
+// Solution #3 (book):
 // From book: We can reduce our space usage by a factor of eight by using a bit vector. 
 // We will assume, in the below code, that the string only uses the lowercase letters a through z. 
 // This will allow us to use just a single int.
