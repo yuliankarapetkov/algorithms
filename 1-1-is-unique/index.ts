@@ -2,7 +2,7 @@
 // Is Unique: Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures? 
 
-// Solution #1:
+// Solution #1 (mine):
 // This will work fine in most cases, but if the charCode happens to be a large number, 
 // this will increase the amount of memory used dramatically. 
 function isUnique(str: string): boolean {
