@@ -6,7 +6,7 @@
 export class Node {
     next: Node = null;
 
-    constructor(public data: number) {
+    constructor(public data: number = 0) {
         this.data = data;
     }
 
