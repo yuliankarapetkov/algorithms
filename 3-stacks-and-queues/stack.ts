@@ -7,11 +7,11 @@ export class Stack<T> {
     private top: StackNode<T>;
 
     get isEmpty(): boolean {
-        return this.top === null;
+        return !this.top;
     }
 
     pop(): T {
-        if (this.top === null) {
+        if (this.isEmpty) {
             throw new Error('Empty Stack');
         }
 
@@ -28,7 +28,7 @@ export class Stack<T> {
     }
 
     peek(): T {
-        if (this.top === null) {
+        if (this.isEmpty) {
             throw new Error('Empty Stack');
         }
 
