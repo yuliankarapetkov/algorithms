@@ -8,6 +8,20 @@ export class BinarySearchTreeNode {
         this._addNoteSimplified(data);
     }
 
+    contains(data: number): BinarySearchTreeNode {
+        if (this.data === data) {
+            return this;
+        } 
+        
+        if (data < this.data && this.left) {
+            return this.left.contains(data);
+        } else if (data > this.data && this.right) {
+            return this.right.contains(data);
+        } 
+        
+        return null;
+    }
+
     private _addNoteSimplified(data: number): void {
         if (data < this.data) {
             if (!this.left) {
