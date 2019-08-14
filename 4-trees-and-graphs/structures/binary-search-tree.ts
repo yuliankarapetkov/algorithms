@@ -22,6 +22,43 @@ export class BinarySearchTreeNode {
         return null;
     }
 
+    inOrderTraversal(fn: (BinarySearchTreeNode) => void): void {
+        this._traversal(this, 'in', fn);
+    }
+
+    preOrderTraversal(fn: (BinarySearchTreeNode) => void): void {
+        this._traversal(this, 'pre', fn);
+    }
+
+    postOrderTraversal(fn: (BinarySearchTreeNode) => void): void {
+        this._traversal(this, 'post', fn);
+    }
+
+    private _traversal(
+        node: BinarySearchTreeNode, 
+        order: 'in' | 'pre' | 'post', 
+        fn: (BinarySearchTreeNode) => void): void {
+
+        if (node) {
+            if (order === 'pre') {
+                fn(node);
+            }
+
+            this._traversal(node.left, order, fn);
+
+            if (order === 'in') {
+                fn(node);
+            }
+
+            this._traversal(node.right, order, fn);
+
+            if (order === 'post') {
+                fn(node);
+            }
+        }
+
+    }
+
     private _addNoteSimplified(data: number): void {
         if (data < this.data) {
             if (!this.left) {
