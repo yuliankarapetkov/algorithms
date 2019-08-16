@@ -5,7 +5,7 @@ export class BinarySearchTreeNode {
     constructor(public data: number) {}
 
     add(data: number): void {
-        this._addNoteSimplified(data);
+        this._addNodeSimplified(data);
     }
 
     contains(data: number): BinarySearchTreeNode {
@@ -59,18 +59,18 @@ export class BinarySearchTreeNode {
 
     }
 
-    private _addNoteSimplified(data: number): void {
+    private _addNodeSimplified(data: number): void {
         if (data < this.data) {
             if (!this.left) {
                 this.left = new BinarySearchTreeNode(data);
             } else {
-                this.left._addNoteSimplified(data);
+                this.left._addNodeSimplified(data);
             }
         } else {
             if (!this.right) {
                 this.right = new BinarySearchTreeNode(data);
             } else {
-                this.right._addNoteSimplified(data);
+                this.right._addNodeSimplified(data);
             }
         }
     }
